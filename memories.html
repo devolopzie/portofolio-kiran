@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basket Memories</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        * {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #FFF5F7;
+            color: #4A4A4A;
+        }
+
+        h2 {
+            color: #E75480;
+            font-weight: bold;
+        }
+
+        /* Navbar */
+        header {
+            background-color: #FFEDF1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E75480;
+            font-family: 'Segoe UI', cursive;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #E75480;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            background-color: #FFD6DC;
+            color: #333;
+        }
+
+        /* Projects */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #fff0f5;
+            padding: 10px;
+
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .project-card img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            border: 3px solid #ffc6d0;
+        }
+
+        h5 {
+            color: #D6336C;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFEDF1;
+            color: #555;
+            border-top: 1px solid #FFD6DC;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Kiran</div>
+            <ul class="nav-links">
+                <li><a href="memories.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#visimisi">Visi & Misi</a></li>
+                <li><a href="index.html#sertifikat">Sertifikat</a></li>
+                <li><a href="memories.html">Memories</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <div class="container py-5">
+        <h2 class="text-center mb-4">Memories of Basket</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0140.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
+                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
+                    <h5 class="mt-3 text-center">Basketball Game</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Kiran's Portofolio. All rights reserved.</p>
+        </footer>
+
+        <!-- Script -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const cards = document.querySelectorAll('.project-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        entry.target.style.transitionDelay = `${index * 0.1}s`;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            cards.forEach(card => observer.observe(card));
+        </script>
+</body>
+
+</html>
