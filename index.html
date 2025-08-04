@@ -2,209 +2,232 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portofolio Kiran</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-  background-color: #FFF5F7;
-  color: #4A4A4A;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portofolio Kiran</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #FFF5F7;
+            color: #4A4A4A;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-h2 {
-  color: #E75480;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* Navbar */
-header {
-  background-color: #FFEDF1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 10%;
-}
+        h2 {
+            color: #E75480;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #E75480;
-  font-family: 'Segoe UI', cursive;
-}
+        /* Navbar */
+        header {
+            background-color: #FFEDF1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+        }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #E75480;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-}
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E75480;
+            font-family: 'Segoe UI', cursive;
+        }
 
-.nav-links li a:hover {
-  background-color: #FFD6DC;
-  color: #333;
-}
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
 
-/* Spacing for all sections */
-section {
-  margin-top: 60px;
-  margin-bottom: 60px;
-  padding: 40px 20px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-}
+        .nav-links li a {
+            text-decoration: none;
+            color: #E75480;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
 
-/* About */
-.container.about {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+        .nav-links li a:hover {
+            background-color: #FFD6DC;
+            color: #333;
+        }
 
-.about .text {
-  flex: 1;
-}
+        /* Spacing for all sections */
+        section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.about .photo {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+        /* About */
+        .container.about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-.about img {
-  max-width: 100%;
-  max-height: 300px;
-  border-radius: 15px;
-  border: 4px solid #FFC0CB;
-  object-fit: cover;
-}
+        .about .text {
+            flex: 1;
+        }
 
-/* Visi Misi */
-.visi-misi {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+        .about .photo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.visi-misi .box {
-  flex: 1;
-  background-color: #FFE6EB;
-  padding: 25px;
-  border-radius: 10px;
-}
+        .about img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 15px;
+            border: 4px solid #FFC0CB;
+            object-fit: cover;
+        }
 
-/* Sertifikat */
-.sertifikat h2 {
-  text-align: center;
-}
+        /* Visi Misi */
+        .visi-misi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-.certs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
+        .visi-misi .box {
+            flex: 1;
+            background-color: #FFE6EB;
+            padding: 25px;
+            border-radius: 10px;
+        }
 
-.certs img {
-  width: 200px;
-  border-radius: 10px;
-  border: 2px solid #FFB6C1;
-}
+        /* Sertifikat */
+        .sertifikat h2 {
+            text-align: center;
+        }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #FFEDF1;
-  color: #555;
-  border-top: 1px solid #FFD6DC;
-  margin-top: 80px;
-}
+        .certs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-  </style>
+        .certs img {
+            width: 200px;
+            border-radius: 10px;
+            border: 2px solid #FFB6C1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFEDF1;
+            color: #555;
+            border-top: 1px solid #FFD6DC;
+            margin-top: 80px;
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">Kiran</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#visimisi">Visi & Misi</a></li>
-        <li><a href="#sertifikat">Sertifikat</a></li>
-        <li><a href="memories.html">Memories</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  
-  <section class="container about" id="about">
-    <div class="text">
-      <h2>About Me</h2>
-      <p>Hai! Aku adalah seorang pelajar yang suka belajar hal-hal baru, terutama di bidang desain dan teknologi.
-        Aku juga suka menggambar dan mendengarkan musik loh!</p>
-    </div>
-    <div class="photo">
-      <img src="foto-cewek.jpg" alt="Foto Cewek" />
-    </div>
-  </section>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Kiran</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#visimisi">Visi & Misi</a></li>
+                <li><a href="#sertifikat">Sertifikat</a></li>
+                <li><a href="memories.html">Memories</a></li>
+            </ul>
+        </nav>
+    </header>
 
 
-  <section class="container visi-misi" id="visimisi">
-    <div class="box">
-      <h2>Visi</h2>
-      <p>Menjadi pribadi yang kreatif, mandiri, dan bermanfaat bagi banyak orang melalui karya digital.</p>
-    </div>
-    <div class="box">
-      <h2>Misi</h2>
-      <p>Terus belajar, mengembangkan skill desain dan teknologi, serta berbagi ilmu kepada sesama.</p>
-    </div>
-  </section>
+    <section class="container about" id="about">
+        <div class="text">
+            <h2>About Me</h2>
+            <p>Hai! Aku adalah seorang pelajar yang suka belajar hal-hal baru, terutama di bidang desain dan teknologi.
+                Aku juga suka menggambar dan mendengarkan musik loh!</p>
+        </div>
+        <div class="photo">
+            <img src="foto-cewek.jpg" alt="Foto Cewek" />
+        </div>
+    </section>
 
-  
-  <section class="container sertifikat" id="sertifikat">
-    <h2>Sertifikat</h2>
-    <div class="certs">
-      <img src="sertifikat1.jpg" alt="Sertifikat 1" />
-      <img src="sertifikat2.jpg" alt="Sertifikat 2" />
-      <img src="sertifikat3.jpg" alt="Sertifikat 3" />
-      <img src="sertifikat4.jpg" alt="Sertifikat 4" />
-      <img src="sertifikat5.jpg" alt="Sertifikat 5" />
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Portofolio by Kiran</p>
-  </footer>
+    <section class="container visi-misi" id="visimisi">
+        <div class="box">
+            <h2>Visi</h2>
+            <p>Menjadi pribadi yang kreatif, mandiri, dan bermanfaat bagi banyak orang melalui karya digital.</p>
+        </div>
+        <div class="box">
+            <h2>Misi</h2>
+            <p>Terus belajar, mengembangkan skill desain dan teknologi, serta berbagi ilmu kepada sesama.</p>
+        </div>
+    </section>
+
+
+    <section class="container sertifikat" id="sertifikat">
+        <h2>Sertifikat</h2>
+        <div class="certs">
+            <img src="sertifikat1.jpg" alt="Sertifikat 1" />
+            <img src="sertifikat2.jpg" alt="Sertifikat 2" />
+            <img src="sertifikat3.jpg" alt="Sertifikat 3" />
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Portofolio by Kiran</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetID = this.getAttribute("href").substring(1);
+                const target = document.getElementById(targetID);
+                const navbarHeight = document.querySelector("header").offsetHeight;
+
+                if (target) {
+                    const targetPosition = target.offsetTop - navbarHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+
 
 </body>
 
