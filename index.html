@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Ini basic HTML buat mulaiin halaman -->
 
 <head>
+    <!-- Ini buat atur tampilan di HP biar responsif -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Portofolio Kiran</title>
+
+    <!-- Pake Bootstrap biar layout & tampilan rapi tanpa coding ribet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <style>
+        /* Warna latar belakang & font buat biar web keliatan soft & enak dibaca */
         body {
             background-color: #FFF5F7;
             color: #4A4A4A;
@@ -15,18 +19,129 @@
             padding: 0;
         }
 
+        /* Scroll-nya biar halus pas klik menu */
         html {
             scroll-behavior: smooth;
         }
 
-
+        /* Judul (kayak About, Visi, dll) dikasih warna pink & tebel biar standout */
         h2 {
             color: #E75480;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
-        /* Navbar */
+        /* ===== NAVBAR ===== */
+        /* Ini bagian atas yang ada menu navigasi */
+        header {
+            background-color: #FFEDF1;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            /* biar nempel di atas pas scroll */
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Posisi logo & menu kanan-kiri */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+        }
+
+        /* Logo nama aku */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E75480;
+            font-family: 'Segoe UI', cursive;
+        }
+
+        /* Menu navigasi kanan */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        /* Gaya tulisan menu */
+        .nav-links li a {
+            text-decoration: none;
+            color: #E75480;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Pas dihover menu-nya berubah warna */
+        .nav-links li a:hover {
+            background-color: #FFD6DC;
+            color: #333;
+        }
+
+        /* ===== BAGIAN KONTEN ===== */
+
+        /* Biar tiap section (kayak About, Visi) punya jarak & tampilan kotak rapi */
+        section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ===== ABOUT ME ===== */
+        /* Bikin isi About bisa 2 kolom (foto & teks) */
+        .container.about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        /* Teks ada di kiri */
+        .about .text {
+            flex: 1;
+        }
+
+        /* Foto ada di kanan */
+        .about .photo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gaya foto biar bulet dikit & rapi */
+        .about img {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 15px;
+            border: 4px solid #FFC0CB;
+            object-fit: cover;
+        }
+
+        /* ===== VISI MISI ===== */
+        /* Bikin 2 box sejajar: satu buat visi, satu buat misi */
+        .visi-misi {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .visi-misi .box {
+            flex: 1;
+            background-color: #FFE6EB;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        /* Header / Navbar */
         header {
             background-color: #FFEDF1;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -53,6 +168,12 @@
             list-style: none;
             display: flex;
             gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
         }
 
         .nav-links li a {
@@ -69,79 +190,45 @@
             color: #333;
         }
 
-        /* Spacing for all sections */
-        section {
-            margin-top: 60px;
-            margin-bottom: 60px;
-            padding: 40px 20px;
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
+        /* Dropdown toggle icon */
+        .dropdown-toggle::after {
+            content: " ▾";
+            font-size: 0.8em;
         }
 
-        /* About */
-        .container.about {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .about .text {
-            flex: 1;
-        }
-
-        .about .photo {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .about img {
-            max-width: 100%;
-            max-height: 300px;
-            border-radius: 15px;
-            border: 4px solid #FFC0CB;
-            object-fit: cover;
-        }
-
-        /* Visi Misi */
-        .visi-misi {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .visi-misi .box {
-            flex: 1;
-            background-color: #FFE6EB;
-            padding: 25px;
+        /* Dropdown menu style */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #FFEDF1;
             border-radius: 10px;
+            padding: 10px 0;
+            display: none;
+            min-width: 160px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            z-index: 100;
         }
 
-        /* Sertifikat */
-        .sertifikat h2 {
-            text-align: center;
+        /* Munculin dropdown pas hover */
+        .dropdown:hover .dropdown-menu {
+            display: block;
         }
 
-        .certs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
+        .dropdown-item {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #E75480;
+            transition: background-color 0.2s ease;
         }
 
-        .certs img {
-            width: 200px;
-            border-radius: 10px;
-            border: 2px solid #FFB6C1;
+        .dropdown-item:hover {
+            background-color: #FFD6DC;
+            color: #333;
         }
 
-        /* Footer */
+        /* ===== FOOTER ===== */
         footer {
             text-align: center;
             padding: 20px;
@@ -155,21 +242,34 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- ===== NAVBAR ===== -->
+    <!-- Ini bagian paling atas, buat pindah ke About, Visi, dll -->
     <header>
         <nav class="navbar">
             <div class="logo">Kiran</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#visimisi">Visi & Misi</a></li>
-                <li><a href="#sertifikat">Sertifikat</a></li>
+                <!-- Menu biasa -->
+                <li><a href="memories.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Visi & Misi</a></li>
                 <li><a href="memories.html">Memories</a></li>
+
+                <!-- Menu Belajar + Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Pelajaran</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="ipa.html">IPA</a></li>
+                        <li><a class="dropdown-item" href="mtk.html">Matematika</a></li>
+                        <li><a class="dropdown-item" href="bindo.html">Bahasa Indonesia</a></li>
+                        <li><a class="dropdown-item" href="binggris.html">Bahasa Inggris</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-
+    <!-- ===== ABOUT ME ===== -->
+    <!-- Di bagian ini aku ngenalin diri aku, ada teks dan foto -->
     <section class="container about" id="about">
         <div class="text">
             <h2>About Me</h2>
@@ -177,11 +277,12 @@
                 Aku juga suka menggambar dan mendengarkan musik loh!</p>
         </div>
         <div class="photo">
-            <img src="foto-cewek.jpg" alt="Foto Cewek" />
+            <img src="foto-cewek.jpg" alt="Foto" />
         </div>
     </section>
 
-
+    <!-- ===== VISI & MISI ===== -->
+    <!-- Ini buat nunjukin tujuan aku & langkah aku ke depannya -->
     <section class="container visi-misi" id="visimisi">
         <div class="box">
             <h2>Visi</h2>
@@ -193,21 +294,13 @@
         </div>
     </section>
 
-
-    <section class="container sertifikat" id="sertifikat">
-        <h2>Sertifikat</h2>
-        <div class="certs">
-            <img src="sertifikat1.jpg" alt="Sertifikat 1" />
-            <img src="sertifikat2.jpg" alt="Sertifikat 2" />
-            <img src="sertifikat3.jpg" alt="Sertifikat 3" />
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
+    <!-- Penutup halaman, kasih nama & tahun -->
     <footer>
         <p>&copy; 2025 Portofolio by Kiran</p>
     </footer>
 
+    <!-- Script buat scroll smooth pas klik menu -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener("click", function (e) {
@@ -227,7 +320,6 @@
             });
         });
     </script>
-
 
 </body>
 

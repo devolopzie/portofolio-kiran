@@ -2,26 +2,130 @@
 <html lang="en">
 
 <head>
+    <!-- Setting dasar buat web, biar tampilannya bener di semua device -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basket Memories</title>
+
+    <!-- Pake Bootstrap biar gampang atur layout-nya -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
     <style>
+        /* Pakai font yang enak dibaca aja */
         * {
             font-family: 'Segoe UI', sans-serif;
         }
 
+        /* Background warna soft pink biar keliatan girly dan calm */
         body {
             background-color: #FFF5F7;
             color: #4A4A4A;
         }
 
+        /* Judul-judul dikasih warna pink tua biar kontras */
         h2 {
             color: #E75480;
             font-weight: bold;
         }
 
-        /* Navbar */
+        /* ============ NAVBAR ============ */
+        header {
+            background-color: #FFEDF1;
+            /* warna pink muda */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            /* bayangan halus */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 10%;
+        }
+
+        /* Nama/logo */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #E75480;
+            font-family: 'Segoe UI', cursive;
+        }
+
+        /* Menu navigasi */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #E75480;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Warna berubah pas di-hover */
+        .nav-links li a:hover {
+            background-color: #FFD6DC;
+            color: #333;
+        }
+
+        /* ============ CARD MEMORIES BASKET ============ */
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #fff0f5;
+            padding: 10px;
+
+            /* Efek awal: belum tampil pas pertama scroll */
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Pas kursor di atas, card-nya agak membesar dikit */
+        .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Muncul perlahan saat discroll ke layar */
+        .project-card.show {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .project-card img {
+            border-radius: 10px;
+            width: 100%;
+            height: auto;
+            border: 3px solid #ffc6d0;
+        }
+
+        /* Judul kecil tiap gambar */
+        h5 {
+            color: #D6336C;
+            font-weight: 500;
+        }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #FFEDF1;
+            color: #555;
+            border-top: 1px solid #FFD6DC;
+            margin-top: 50px;
+        }
+
+        /* Header / Navbar */
         header {
             background-color: #FFEDF1;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -48,6 +152,12 @@
             list-style: none;
             display: flex;
             gap: 25px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative;
         }
 
         .nav-links li a {
@@ -64,71 +174,79 @@
             color: #333;
         }
 
-        /* Projects */
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            border-radius: 10px;
-            background-color: #fff0f5;
-            padding: 10px;
-
-            opacity: 0;
-            transform: translateY(30px);
+        /* Dropdown toggle icon */
+        .dropdown-toggle::after {
+            content: " ▾";
+            font-size: 0.8em;
         }
 
-        .project-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-card.show {
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .project-card img {
-            border-radius: 10px;
-            width: 100%;
-            height: auto;
-            border: 3px solid #ffc6d0;
-        }
-
-        h5 {
-            color: #D6336C;
-            font-weight: 500;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
+        /* Dropdown menu style */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
             background-color: #FFEDF1;
-            color: #555;
-            border-top: 1px solid #FFD6DC;
-            margin-top: 50px;
+            border-radius: 10px;
+            padding: 10px 0;
+            display: none;
+            min-width: 160px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        /* Munculin dropdown pas hover */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #E75480;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #FFD6DC;
+            color: #333;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
+
+    <!-- ============ NAVBAR ============ -->
     <header>
         <nav class="navbar">
             <div class="logo">Kiran</div>
             <ul class="nav-links">
+                <!-- Menu biasa -->
                 <li><a href="memories.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#visimisi">Visi & Misi</a></li>
-                <li><a href="index.html#sertifikat">Sertifikat</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Visi & Misi</a></li>
                 <li><a href="memories.html">Memories</a></li>
+
+                <!-- Menu Belajar + Dropdown -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Pelajaran</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="ipa.html">IPA</a></li>
+                        <li><a class="dropdown-item" href="mtk.html">Matematika</a></li>
+                        <li><a class="dropdown-item" href="bindo.html">Bahasa Indonesia</a></li>
+                        <li><a class="dropdown-item" href="binggris.html">Bahasa Inggris</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- Projects Section -->
+
+    <!-- ============ SECTION FOTO-FOTO BASKET ============ -->
     <div class="container py-5">
         <h2 class="text-center mb-4">Memories of Basket</h2>
+
+        <!-- Ini isinya 3 foto basket yang berkesan -->
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
@@ -148,86 +266,15 @@
                     <h5 class="mt-3 text-center">Basketball Game</h5>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="project-card" data-bs-toggle="modal" data-bs-target="#projectModal">
-                    <img src="Basket-3/IMG_0141.JPG" alt="Basket Game" />
-                    <h5 class="mt-3 text-center">Basketball Game</h5>
-                </div>
-            </div>
         </div>
 
-        <!-- Footer -->
+        <!-- ============ FOOTER ============ -->
         <footer>
             <p>&copy; 2025 Kiran's Portofolio. All rights reserved.</p>
         </footer>
 
-        <!-- Script -->
+        <!-- ============ SCRIPT ============ -->
+        <!-- Script ini buat animasi munculnya foto pas di-scroll -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             const cards = document.querySelectorAll('.project-card');
@@ -236,7 +283,7 @@
                     if (entry.isIntersecting) {
                         entry.target.classList.add('show');
                         entry.target.style.transitionDelay = `${index * 0.1}s`;
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); // cuma muncul sekali, gak terus-terusan
                     }
                 });
             }, { threshold: 0.2 });
